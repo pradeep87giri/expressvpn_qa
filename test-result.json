@@ -1,0 +1,210 @@
+{
+  "config": {
+    "forbidOnly": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/pradeep/Documents/expressvpn_qa/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "name": "chromium",
+        "testDir": "/home/pradeep/Documents/expressvpn_qa",
+        "testIgnore": [],
+        "testMatch": [
+          "**/?(*.)@(spec|test).@(ts|js|mjs)"
+        ],
+        "timeout": 120000
+      },
+      {
+        "outputDir": "/home/pradeep/Documents/expressvpn_qa/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "name": "firefox",
+        "testDir": "/home/pradeep/Documents/expressvpn_qa",
+        "testIgnore": [],
+        "testMatch": [
+          "**/?(*.)@(spec|test).@(ts|js|mjs)"
+        ],
+        "timeout": 120000
+      },
+      {
+        "outputDir": "/home/pradeep/Documents/expressvpn_qa/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "name": "webkit",
+        "testDir": "/home/pradeep/Documents/expressvpn_qa",
+        "testIgnore": [],
+        "testMatch": [
+          "**/?(*.)@(spec|test).@(ts|js|mjs)"
+        ],
+        "timeout": 120000
+      }
+    ],
+    "reporter": [
+      [
+        "dot",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-result.json"
+        }
+      ],
+      [
+        "/home/pradeep/Documents/expressvpn_qa/node_modules/experimental-allure-playwright/dist/index.js",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "rootDir": "/home/pradeep/Documents/expressvpn_qa",
+    "quiet": false,
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.17.1",
+    "workers": 3,
+    "webServer": null,
+    "__testGroupsCount": 3
+  },
+  "suites": [
+    {
+      "title": "test/order.test.ts",
+      "file": "test/order.test.ts",
+      "line": 0,
+      "column": 0,
+      "specs": [
+        {
+          "title": "Order Successfully",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "failed",
+                  "duration": 76867,
+                  "error": {
+                    "message": "\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"https://www.expressvpn.com/orde\"\u001b[39m\nReceived: \u001b[31m\"https://www.expressvpn.com/orde\u001b[7mr\u001b[27m\"\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"https://www.expressvpn.com/orde\"\u001b[39m\nReceived: \u001b[31m\"https://www.expressvpn.com/orde\u001b[7mr\u001b[27m\"\u001b[39m\n    at _baseFixture.test.beforeEach (/home/pradeep/Documents/expressvpn_qa/test/order.test.ts:9:24)"
+                  },
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Order-Successfully-chromium/1ace6c4ebee5888da9e3c0aed44eee6b.webm"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Order-Successfully-chromium/test-failed-1.png"
+                    }
+                  ],
+                  "errorLocation": {
+                    "column": 24,
+                    "line": 9
+                  }
+                }
+              ],
+              "status": "unexpected"
+            },
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "failed",
+                  "duration": 101482,
+                  "error": {
+                    "message": "\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"https://www.expressvpn.com/orde\"\u001b[39m\nReceived: \u001b[31m\"https://www.expressvpn.com/orde\u001b[7mr\u001b[27m\"\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"https://www.expressvpn.com/orde\"\u001b[39m\nReceived: \u001b[31m\"https://www.expressvpn.com/orde\u001b[7mr\u001b[27m\"\u001b[39m\n    at _baseFixture.test.beforeEach (/home/pradeep/Documents/expressvpn_qa/test/order.test.ts:9:24)"
+                  },
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Order-Successfully-firefox/c8428e00-de3f-4abb-b3e4-75bf8020eb4c.webm"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Order-Successfully-firefox/test-failed-1.png"
+                    }
+                  ],
+                  "errorLocation": {
+                    "column": 24,
+                    "line": 9
+                  }
+                }
+              ],
+              "status": "unexpected"
+            },
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "status": "failed",
+                  "duration": 81704,
+                  "error": {
+                    "message": "\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"https://www.expressvpn.com/orde\"\u001b[39m\nReceived: \u001b[31m\"https://www.expressvpn.com/orde\u001b[7mr\u001b[27m\"\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"https://www.expressvpn.com/orde\"\u001b[39m\nReceived: \u001b[31m\"https://www.expressvpn.com/orde\u001b[7mr\u001b[27m\"\u001b[39m\n    at _baseFixture.test.beforeEach (/home/pradeep/Documents/expressvpn_qa/test/order.test.ts:9:24)"
+                  },
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Order-Successfully-webkit/5304a1b11c318d69a8b302a569ca4661.webm"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Order-Successfully-webkit/test-failed-1.png"
+                    }
+                  ],
+                  "errorLocation": {
+                    "column": 24,
+                    "line": 9
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "file": "test/order.test.ts",
+          "line": 12,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

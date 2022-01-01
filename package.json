@@ -1,0 +1,25 @@
+{
+  "name": "expressvpn_qa",
+  "version": "1.0.0",
+  "description": "Test Framework for ExpressVPN",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "debug": "npx playwright test --debug",
+    "install-deps": "npx playwright install-deps"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.17.1",
+    "playwright": "^1.17.1",
+    "typescript": "4.5.4",
+    "ts-node": "10.4.0",
+    "experimental-allure-playwright": "0.0.3"
+  },
+  "keywords": [
+    "qa",
+    "expressvpn",
+    "playwright test runner"
+  ],
+  "author": "Pradeep Giri",
+  "license": "ISC"
+}
