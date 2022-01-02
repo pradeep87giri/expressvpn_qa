@@ -1,0 +1,8 @@
+#Ignore json results
+allure-results
+
+#Ignore screenshot and videos
+test-results
+
+#Ignore test results
+test-result.json

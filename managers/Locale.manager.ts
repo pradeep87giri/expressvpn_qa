@@ -8,16 +8,16 @@ export default class LocaleManager {
         this.filePath = './locale_files/en-US.properties';
     }
 
-    public getProperty(locale: string, key: string) {
+    public getLocaleProperty(locale: string, key: string) {
         //Select en-US locale by default if no locale is provided
         if (locale != null) {
-            this.filePath = './locale_files/' + locale
+            this.filePath = './locale_files/' + locale + '.properties'
         }
         var properties = this.propertiesReader(this.filePath);
         return properties.get(key)
     }
 
-    public setProperty(locale: string, key: string, value: string) {
+    public setLocaleProperty(locale: string, key: string, value: string) {
         //Select en-US locale by default if no locale is provided
         if (locale != null) {
             this.filePath = './locale_files/' + locale

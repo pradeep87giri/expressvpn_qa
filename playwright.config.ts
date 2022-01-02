@@ -1,4 +1,5 @@
 import { PlaywrightTestConfig } from "@playwright/test";
+import * as data from "./data/order.data.json";
 
 
 const config: PlaywrightTestConfig = {
@@ -8,7 +9,7 @@ const config: PlaywrightTestConfig = {
         screenshot: "only-on-failure",
         video: "retain-on-failure",
         baseURL: "https://www.expressvpn.com",
-        locale: "de-DE"
+        locale: data.country.toLowerCase() + "-" + data.country.toUpperCase()
     },
     projects: [
         {
@@ -17,18 +18,18 @@ const config: PlaywrightTestConfig = {
                 browserName: "chromium"
             }
         }
-        , {
-            name: 'firefox',
-            use: {
-                browserName: "firefox"
-            }
-        },
-        {
-            name: 'webkit',
-            use: {
-                browserName: "webkit"
-            }
-        }
+        // , {
+        //     name: 'firefox',
+        //     use: {
+        //         browserName: "firefox"
+        //     }
+        // },
+        // {
+        //     name: 'webkit',
+        //     use: {
+        //         browserName: "webkit"
+        //     }
+        // }
     ],
     timeout: 120000,
     workers: 3,
