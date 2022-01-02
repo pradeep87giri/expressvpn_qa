@@ -6,7 +6,7 @@
     "globalTimeout": 0,
     "grep": {},
     "grepInvert": null,
-    "maxFailures": 1,
+    "maxFailures": 0,
     "preserveOutput": "always",
     "projects": [
       {
@@ -19,7 +19,31 @@
         "testMatch": [
           "**/?(*.)@(spec|test).@(ts|js|mjs)"
         ],
-        "timeout": 0
+        "timeout": 120000
+      },
+      {
+        "outputDir": "/home/pradeep/Documents/expressvpn_qa/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "name": "firefox",
+        "testDir": "/home/pradeep/Documents/expressvpn_qa",
+        "testIgnore": [],
+        "testMatch": [
+          "**/?(*.)@(spec|test).@(ts|js|mjs)"
+        ],
+        "timeout": 120000
+      },
+      {
+        "outputDir": "/home/pradeep/Documents/expressvpn_qa/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "name": "webkit",
+        "testDir": "/home/pradeep/Documents/expressvpn_qa",
+        "testIgnore": [],
+        "testMatch": [
+          "**/?(*.)@(spec|test).@(ts|js|mjs)"
+        ],
+        "timeout": 120000
       }
     ],
     "reporter": [
@@ -49,7 +73,7 @@
     "version": "1.17.1",
     "workers": 1,
     "webServer": null,
-    "__testGroupsCount": 1
+    "__testGroupsCount": 3
   },
   "suites": [
     {
@@ -64,26 +88,326 @@
           "tags": [],
           "tests": [
             {
-              "timeout": 0,
+              "timeout": 120000,
               "annotations": [],
-              "expectedStatus": "passed",
+              "expectedStatus": "skipped",
               "projectName": "chromium",
               "results": [
                 {
                   "workerIndex": 0,
-                  "status": "passed",
-                  "duration": 27255,
+                  "status": "skipped",
+                  "duration": 0,
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
                   "attachments": []
                 }
               ],
-              "status": "expected"
+              "status": "skipped"
+            },
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "skipped",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            },
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "skipped",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "status": "skipped",
+                  "duration": 0,
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
             }
           ],
           "file": "test/order.test.ts",
           "line": 18,
+          "column": 6
+        },
+        {
+          "title": "Change Language",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "skipped",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "skipped",
+                  "duration": 0,
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            },
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "skipped",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            },
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "skipped",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "status": "skipped",
+                  "duration": 0,
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "file": "test/order.test.ts",
+          "line": 24,
+          "column": 6
+        },
+        {
+          "title": "Incorrect Email",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "skipped",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "skipped",
+                  "duration": 0,
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            },
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "skipped",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            },
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "skipped",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "status": "skipped",
+                  "duration": 0,
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "file": "test/order.test.ts",
+          "line": 31,
+          "column": 6
+        },
+        {
+          "title": "Visual Comparison",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "failed",
+                  "duration": 4912,
+                  "error": {
+                    "message": "/home/pradeep/Documents/expressvpn_qa/test/order.test.ts-snapshots/order-chromium-linux.png is missing in snapshots, writing actual.",
+                    "stack": "Error: /home/pradeep/Documents/expressvpn_qa/test/order.test.ts-snapshots/order-chromium-linux.png is missing in snapshots, writing actual.\n    at /home/pradeep/Documents/expressvpn_qa/test/order.test.ts:38:37"
+                  },
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-chromium/183cd638a3bf1c2830e648b6645ff7c2.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-chromium/trace.zip"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-chromium/test-failed-1.png"
+                    }
+                  ],
+                  "errorLocation": {
+                    "column": 37,
+                    "line": 38
+                  }
+                }
+              ],
+              "status": "unexpected"
+            },
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "failed",
+                  "duration": 14663,
+                  "error": {
+                    "message": "/home/pradeep/Documents/expressvpn_qa/test/order.test.ts-snapshots/order-firefox-linux.png is missing in snapshots, writing actual.",
+                    "stack": "Error: /home/pradeep/Documents/expressvpn_qa/test/order.test.ts-snapshots/order-firefox-linux.png is missing in snapshots, writing actual.\n    at /home/pradeep/Documents/expressvpn_qa/test/order.test.ts:38:37"
+                  },
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-firefox/56f61e39-d84b-409b-8866-e6121c70e39a.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-firefox/trace.zip"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-firefox/test-failed-1.png"
+                    }
+                  ],
+                  "errorLocation": {
+                    "column": 37,
+                    "line": 38
+                  }
+                }
+              ],
+              "status": "unexpected"
+            },
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "status": "failed",
+                  "duration": 13930,
+                  "error": {
+                    "message": "/home/pradeep/Documents/expressvpn_qa/test/order.test.ts-snapshots/order-webkit-linux.png is missing in snapshots, writing actual.",
+                    "stack": "Error: /home/pradeep/Documents/expressvpn_qa/test/order.test.ts-snapshots/order-webkit-linux.png is missing in snapshots, writing actual.\n    at /home/pradeep/Documents/expressvpn_qa/test/order.test.ts:38:37"
+                  },
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-webkit/f72386d055bbba91dba11798a66fcb8d.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-webkit/trace.zip"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-webkit/test-failed-1.png"
+                    }
+                  ],
+                  "errorLocation": {
+                    "column": 37,
+                    "line": 38
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "file": "test/order.test.ts",
+          "line": 37,
           "column": 1
         }
       ]

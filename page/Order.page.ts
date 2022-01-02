@@ -6,25 +6,26 @@ export default class OrderPage {
 
     private page: Page;
     private localeManager: LocaleManager
+
+    //Locators
+    public email = "#signup_email"
+    public headerTitle = "div.order-page-title h1 div.desktop"
+    public languageSelector = "#front-nav button.language-picker"
+    public planTitle = ".step-heading >> nth=0"
+    public emailTitle = ".step-heading >> nth=1"
+    public paymentTitle = ".step-heading div.desktop"
+    public alertMsg = ".alert p >> nth = 0"
+    public emailErrorMsg = "#signup_email-error"
+
     constructor(page: Page) {
         this.page = page;
         this.localeManager = new LocaleManager()
     }
 
-
-    eleEmail = async () => this.page.locator("#signup_email");
-    eleHeader = async () => this.page.locator("div.order-page-title h1 div.desktop");
-    eleLanguageSelector = async () => this.page.locator("#front-nav button.language-picker");
-
-
     public async enterEmail(name: string) {
-        const ele = await this.eleEmail();
-        if (ele != null)
-            await ele.fill(name);
-        else
-            throw new Error("Email element not found!!")
+        const eleEmail = this.page.locator(this.email)
+        await eleEmail.fill(name)
     }
-
 
     public async selectPlan(plan: string) {
         let elePlan;
@@ -38,23 +39,31 @@ export default class OrderPage {
         else
             throw new Error("Incorrect Plan! Please select 1, 6 or 12")
 
-        if (elePlan != null)
-            await elePlan.click()
-        else
-            throw new Error("Plan element not found!!")
+        await elePlan?.click()
     }
-
 
     public async verifyTexts(locale: string) {
-        const eleHeader = await this.eleHeader();
-        const expectedHeader = this.localeManager.getLocaleProperty(locale, 'header')
-        expect((await eleHeader.innerText()).trim()).toMatch(expectedHeader)
+        const eleHeader = this.page.locator(this.headerTitle)
+        const elePlanTitle = this.page.locator(this.planTitle)
+        const eleEmailTitle = this.page.locator(this.emailTitle)
+        const elePaymentTitle = this.page.locator(this.paymentTitle)
+
+        //expected texts from locale files
+        const expectedHeaderTxt = this.localeManager.getLocaleProperty(locale, 'header')
+        const expectedPlanTxt = this.localeManager.getLocaleProperty(locale, 'planTitle')
+        const expectedEmailTxt = this.localeManager.getLocaleProperty(locale, 'emailTitle')
+        const expectedPaymentTxt = this.localeManager.getLocaleProperty(locale, 'paymentTitle')
+
+        //Verifying the actual texts with expected
+        await expect(eleHeader).toHaveText(expectedHeaderTxt)
+        await expect(elePlanTitle).toContainText(expectedPlanTxt)
+        await expect(eleEmailTitle).toContainText(expectedEmailTxt)
+        await expect(elePaymentTitle).toContainText(expectedPaymentTxt)
     }
 
-
     public async changeLanguage(language: string) {
-        const ele = await this.eleLanguageSelector()
-        await ele.hover()
+        const eleLanguage = this.page.locator(this.languageSelector)
+        await eleLanguage.hover()
 
         switch (language.toLowerCase()) {
             case ('en'):
@@ -69,7 +78,18 @@ export default class OrderPage {
             default:
             //do nothing"
         }
-        //Validate the url is navigated to correct locale
-        expect(this.page.url()).toBe("https://www.expressvpn.com/" + language + "/order")
     }
+
+    public async verifyEmailErrorMsg(locale: string){
+        const eleEmailErrorMsg = this.page.locator(this.emailErrorMsg)
+        const expectedErrorTxt = this.localeManager.getLocaleProperty(locale, 'emailErrorMsg')
+        await expect(eleEmailErrorMsg).toHaveText(expectedErrorTxt)
+    }
+
+    public async verifyAlertMsg(locale: string){
+        const eleAlertMsg = this.page.locator(this.alertMsg)
+        const expectedAlertMsg = this.localeManager.getLocaleProperty(locale, 'alertMsg')
+        await expect(eleAlertMsg).toHaveText(expectedAlertMsg)
+    }
+
 }
