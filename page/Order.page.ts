@@ -80,13 +80,13 @@ export default class OrderPage {
         }
     }
 
-    public async verifyEmailErrorMsg(locale: string){
+    public async verifyEmailErrorMsg(locale: string) {
         const eleEmailErrorMsg = this.page.locator(this.emailErrorMsg)
         const expectedErrorTxt = this.localeManager.getLocaleProperty(locale, 'emailErrorMsg')
         await expect(eleEmailErrorMsg).toHaveText(expectedErrorTxt)
     }
 
-    public async verifyAlertMsg(locale: string){
+    public async verifyAlertMsg(locale: string) {
         const eleAlertMsg = this.page.locator(this.alertMsg)
         const expectedAlertMsg = this.localeManager.getLocaleProperty(locale, 'alertMsg')
         await expect(eleAlertMsg).toHaveText(expectedAlertMsg)

@@ -276,7 +276,7 @@
         },
         {
           "title": "Visual Comparison",
-          "ok": false,
+          "ok": true,
           "tags": [],
           "tests": [
             {
@@ -287,39 +287,15 @@
               "results": [
                 {
                   "workerIndex": 0,
-                  "status": "failed",
-                  "duration": 4912,
-                  "error": {
-                    "message": "/home/pradeep/Documents/expressvpn_qa/test/order.test.ts-snapshots/order-chromium-linux.png is missing in snapshots, writing actual.",
-                    "stack": "Error: /home/pradeep/Documents/expressvpn_qa/test/order.test.ts-snapshots/order-chromium-linux.png is missing in snapshots, writing actual.\n    at /home/pradeep/Documents/expressvpn_qa/test/order.test.ts:38:37"
-                  },
+                  "status": "passed",
+                  "duration": 6580,
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "attachments": [
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-chromium/183cd638a3bf1c2830e648b6645ff7c2.webm"
-                    },
-                    {
-                      "name": "trace",
-                      "contentType": "application/zip",
-                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-chromium/trace.zip"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-chromium/test-failed-1.png"
-                    }
-                  ],
-                  "errorLocation": {
-                    "column": 37,
-                    "line": 38
-                  }
+                  "attachments": []
                 }
               ],
-              "status": "unexpected"
+              "status": "expected"
             },
             {
               "timeout": 120000,
@@ -329,39 +305,15 @@
               "results": [
                 {
                   "workerIndex": 1,
-                  "status": "failed",
-                  "duration": 14663,
-                  "error": {
-                    "message": "/home/pradeep/Documents/expressvpn_qa/test/order.test.ts-snapshots/order-firefox-linux.png is missing in snapshots, writing actual.",
-                    "stack": "Error: /home/pradeep/Documents/expressvpn_qa/test/order.test.ts-snapshots/order-firefox-linux.png is missing in snapshots, writing actual.\n    at /home/pradeep/Documents/expressvpn_qa/test/order.test.ts:38:37"
-                  },
+                  "status": "passed",
+                  "duration": 14026,
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "attachments": [
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-firefox/56f61e39-d84b-409b-8866-e6121c70e39a.webm"
-                    },
-                    {
-                      "name": "trace",
-                      "contentType": "application/zip",
-                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-firefox/trace.zip"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-firefox/test-failed-1.png"
-                    }
-                  ],
-                  "errorLocation": {
-                    "column": 37,
-                    "line": 38
-                  }
+                  "attachments": []
                 }
               ],
-              "status": "unexpected"
+              "status": "expected"
             },
             {
               "timeout": 120000,
@@ -372,19 +324,34 @@
                 {
                   "workerIndex": 2,
                   "status": "failed",
-                  "duration": 13930,
+                  "duration": 14081,
                   "error": {
-                    "message": "/home/pradeep/Documents/expressvpn_qa/test/order.test.ts-snapshots/order-webkit-linux.png is missing in snapshots, writing actual.",
-                    "stack": "Error: /home/pradeep/Documents/expressvpn_qa/test/order.test.ts-snapshots/order-webkit-linux.png is missing in snapshots, writing actual.\n    at /home/pradeep/Documents/expressvpn_qa/test/order.test.ts:38:37"
+                    "message": "\u001b[31mSnapshot comparison failed:\u001b[39m\n\nExpected: \u001b[33m/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-webkit/order-en-expected.png\u001b[39m\nReceived: \u001b[33m/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-webkit/order-en-actual.png\u001b[39m\n    Diff: \u001b[33m/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-webkit/order-en-diff.png\u001b[39m",
+                    "stack": "Error: \u001b[31mSnapshot comparison failed:\u001b[39m\n\nExpected: \u001b[33m/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-webkit/order-en-expected.png\u001b[39m\nReceived: \u001b[33m/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-webkit/order-en-actual.png\u001b[39m\n    Diff: \u001b[33m/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-webkit/order-en-diff.png\u001b[39m\n    at /home/pradeep/Documents/expressvpn_qa/test/order.test.ts:43:37"
                   },
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
                   "attachments": [
                     {
+                      "name": "expected",
+                      "contentType": "image/png",
+                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-webkit/order-en-expected.png"
+                    },
+                    {
+                      "name": "actual",
+                      "contentType": "image/png",
+                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-webkit/order-en-actual.png"
+                    },
+                    {
+                      "name": "diff",
+                      "contentType": "image/png",
+                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-webkit/order-en-diff.png"
+                    },
+                    {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-webkit/f72386d055bbba91dba11798a66fcb8d.webm"
+                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-webkit/e7f93c29ce73dbd6a167340f1580fd84.webm"
                     },
                     {
                       "name": "trace",
@@ -399,7 +366,7 @@
                   ],
                   "errorLocation": {
                     "column": 37,
-                    "line": 38
+                    "line": 43
                   }
                 }
               ],

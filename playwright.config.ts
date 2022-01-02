@@ -10,8 +10,13 @@ const config: PlaywrightTestConfig = {
         video: "retain-on-failure",
         trace: "retain-on-failure",
         baseURL: "https://www.expressvpn.com",
-        locale: data.language.toLowerCase() + "-" + data.country.toUpperCase()
+        locale: data.language.toLowerCase() + "-" + data.country.toUpperCase(),
+        viewport: {
+            width: 1280,
+            height: 720
+        }
     },
+
     projects: [
         {
             name: 'chromium',
