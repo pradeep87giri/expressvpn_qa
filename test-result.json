@@ -13,31 +13,7 @@
         "outputDir": "/home/pradeep/Documents/expressvpn_qa/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "name": "chromium",
-        "testDir": "/home/pradeep/Documents/expressvpn_qa",
-        "testIgnore": [],
-        "testMatch": [
-          "**/?(*.)@(spec|test).@(ts|js|mjs)"
-        ],
-        "timeout": 120000
-      },
-      {
-        "outputDir": "/home/pradeep/Documents/expressvpn_qa/test-results",
-        "repeatEach": 1,
-        "retries": 0,
-        "name": "firefox",
-        "testDir": "/home/pradeep/Documents/expressvpn_qa",
-        "testIgnore": [],
-        "testMatch": [
-          "**/?(*.)@(spec|test).@(ts|js|mjs)"
-        ],
-        "timeout": 120000
-      },
-      {
-        "outputDir": "/home/pradeep/Documents/expressvpn_qa/test-results",
-        "repeatEach": 1,
-        "retries": 0,
-        "name": "webkit",
+        "name": "playwright-webkit@latest:OSX Big Sur@browserstack",
         "testDir": "/home/pradeep/Documents/expressvpn_qa",
         "testIgnore": [],
         "testMatch": [
@@ -71,9 +47,9 @@
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.17.1",
-    "workers": 1,
+    "workers": 2,
     "webServer": null,
-    "__testGroupsCount": 3
+    "__testGroupsCount": 1
   },
   "suites": [
     {
@@ -84,67 +60,35 @@
       "specs": [
         {
           "title": "Order Successfully",
-          "ok": true,
+          "ok": false,
           "tags": [],
           "tests": [
             {
               "timeout": 120000,
               "annotations": [],
-              "expectedStatus": "skipped",
-              "projectName": "chromium",
+              "expectedStatus": "passed",
+              "projectName": "playwright-webkit@latest:OSX Big Sur@browserstack",
               "results": [
                 {
                   "workerIndex": 0,
-                  "status": "skipped",
-                  "duration": 0,
+                  "status": "failed",
+                  "duration": 3429,
+                  "error": {
+                    "message": "browserType.connect: Browser has been closed",
+                    "stack": "browserType.connect: Browser has been closed\n    at Object.browser [as fn] (/home/pradeep/Documents/expressvpn_qa/fixture/fixtures.ts:51:50)\n    at Fixture.setup (/home/pradeep/Documents/expressvpn_qa/node_modules/@playwright/test/lib/fixtures.js:74:73)"
+                  },
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
                   "attachments": []
                 }
               ],
-              "status": "skipped"
-            },
-            {
-              "timeout": 120000,
-              "annotations": [],
-              "expectedStatus": "skipped",
-              "projectName": "firefox",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "status": "skipped",
-                  "duration": 0,
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "attachments": []
-                }
-              ],
-              "status": "skipped"
-            },
-            {
-              "timeout": 120000,
-              "annotations": [],
-              "expectedStatus": "skipped",
-              "projectName": "webkit",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "status": "skipped",
-                  "duration": 0,
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "attachments": []
-                }
-              ],
-              "status": "skipped"
+              "status": "unexpected"
             }
           ],
           "file": "test/order.test.ts",
-          "line": 18,
-          "column": 6
+          "line": 17,
+          "column": 1
         },
         {
           "title": "Change Language",
@@ -155,25 +99,7 @@
               "timeout": 120000,
               "annotations": [],
               "expectedStatus": "skipped",
-              "projectName": "chromium",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "status": "skipped",
-                  "duration": 0,
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "attachments": []
-                }
-              ],
-              "status": "skipped"
-            },
-            {
-              "timeout": 120000,
-              "annotations": [],
-              "expectedStatus": "skipped",
-              "projectName": "firefox",
+              "projectName": "playwright-webkit@latest:OSX Big Sur@browserstack",
               "results": [
                 {
                   "workerIndex": 1,
@@ -186,28 +112,10 @@
                 }
               ],
               "status": "skipped"
-            },
-            {
-              "timeout": 120000,
-              "annotations": [],
-              "expectedStatus": "skipped",
-              "projectName": "webkit",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "status": "skipped",
-                  "duration": 0,
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "attachments": []
-                }
-              ],
-              "status": "skipped"
             }
           ],
           "file": "test/order.test.ts",
-          "line": 24,
+          "line": 23,
           "column": 6
         },
         {
@@ -219,25 +127,7 @@
               "timeout": 120000,
               "annotations": [],
               "expectedStatus": "skipped",
-              "projectName": "chromium",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "status": "skipped",
-                  "duration": 0,
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "attachments": []
-                }
-              ],
-              "status": "skipped"
-            },
-            {
-              "timeout": 120000,
-              "annotations": [],
-              "expectedStatus": "skipped",
-              "projectName": "firefox",
+              "projectName": "playwright-webkit@latest:OSX Big Sur@browserstack",
               "results": [
                 {
                   "workerIndex": 1,
@@ -250,28 +140,10 @@
                 }
               ],
               "status": "skipped"
-            },
-            {
-              "timeout": 120000,
-              "annotations": [],
-              "expectedStatus": "skipped",
-              "projectName": "webkit",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "status": "skipped",
-                  "duration": 0,
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "attachments": []
-                }
-              ],
-              "status": "skipped"
             }
           ],
           "file": "test/order.test.ts",
-          "line": 31,
+          "line": 30,
           "column": 6
         },
         {
@@ -282,100 +154,25 @@
             {
               "timeout": 120000,
               "annotations": [],
-              "expectedStatus": "passed",
-              "projectName": "chromium",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "status": "passed",
-                  "duration": 6580,
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            },
-            {
-              "timeout": 120000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectName": "firefox",
+              "expectedStatus": "skipped",
+              "projectName": "playwright-webkit@latest:OSX Big Sur@browserstack",
               "results": [
                 {
                   "workerIndex": 1,
-                  "status": "passed",
-                  "duration": 14026,
+                  "status": "skipped",
+                  "duration": 0,
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
                   "attachments": []
                 }
               ],
-              "status": "expected"
-            },
-            {
-              "timeout": 120000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectName": "webkit",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "status": "failed",
-                  "duration": 14081,
-                  "error": {
-                    "message": "\u001b[31mSnapshot comparison failed:\u001b[39m\n\nExpected: \u001b[33m/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-webkit/order-en-expected.png\u001b[39m\nReceived: \u001b[33m/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-webkit/order-en-actual.png\u001b[39m\n    Diff: \u001b[33m/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-webkit/order-en-diff.png\u001b[39m",
-                    "stack": "Error: \u001b[31mSnapshot comparison failed:\u001b[39m\n\nExpected: \u001b[33m/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-webkit/order-en-expected.png\u001b[39m\nReceived: \u001b[33m/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-webkit/order-en-actual.png\u001b[39m\n    Diff: \u001b[33m/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-webkit/order-en-diff.png\u001b[39m\n    at /home/pradeep/Documents/expressvpn_qa/test/order.test.ts:43:37"
-                  },
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "attachments": [
-                    {
-                      "name": "expected",
-                      "contentType": "image/png",
-                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-webkit/order-en-expected.png"
-                    },
-                    {
-                      "name": "actual",
-                      "contentType": "image/png",
-                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-webkit/order-en-actual.png"
-                    },
-                    {
-                      "name": "diff",
-                      "contentType": "image/png",
-                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-webkit/order-en-diff.png"
-                    },
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-webkit/e7f93c29ce73dbd6a167340f1580fd84.webm"
-                    },
-                    {
-                      "name": "trace",
-                      "contentType": "application/zip",
-                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-webkit/trace.zip"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Visual-Comparison-webkit/test-failed-1.png"
-                    }
-                  ],
-                  "errorLocation": {
-                    "column": 37,
-                    "line": 43
-                  }
-                }
-              ],
-              "status": "unexpected"
+              "status": "skipped"
             }
           ],
           "file": "test/order.test.ts",
-          "line": 37,
-          "column": 1
+          "line": 36,
+          "column": 6
         }
       ]
     }

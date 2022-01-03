@@ -1,9 +1,7 @@
-import { BrowserContext, Page } from 'playwright';
-import { test, expect } from '../fixture/baseFixture'
+import { expect } from "@playwright/test";
 import * as data from "../data/order.data.json";
+import test from "../fixture/fixtures";
 
-let page: Page;
-let context: BrowserContext;
 let locale: string;
 
 test.beforeAll(() => {
@@ -15,7 +13,7 @@ test.beforeEach(async ({ page }) => {
     expect(page.url()).toBe("https://www.expressvpn.com/order")
 })
 
-test.skip("Order Successfully", async ({ orderPage }) => {
+test("Order Successfully", async ({ orderPage }) => {
     await orderPage.enterEmail(data.email)
     await orderPage.selectPlan(data.planInMonths)
     await orderPage.verifyTexts("en-US")
@@ -34,11 +32,14 @@ test.skip("Incorrect Email", async ({ orderPage }) => {
     await orderPage.verifyEmailErrorMsg("en-US")
 })
 
-test('Visual Comparison', async ({ page }) => {
+test.skip('Visual Comparison', async ({ page }) => {
     //Wait till it is ready to take a screenshot
     await page.waitForLoadState('load')
     await page.locator(".designstudio-button").waitFor()
 
     // Compare screenshot with existing snapshot
-    expect(await page.screenshot()).toMatchSnapshot('order-en.png', { threshold: 0.3 });
+    expect(await page.screenshot(
+        // Uncomment the following line to compare full page
+        // { fullPage: true }  
+    )).toMatchSnapshot('order-en.png', { threshold: 0.3 });
 });

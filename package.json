@@ -14,7 +14,8 @@
     "typescript": "4.5.4",
     "ts-node": "10.4.0",
     "experimental-allure-playwright": "0.0.3",
-    "properties-reader": "2.2.0"
+    "properties-reader": "2.2.0",
+    "browserstack-local": "^1.4.8"
   },
   "keywords": [
     "qa",

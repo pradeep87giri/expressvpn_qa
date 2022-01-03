@@ -16,8 +16,9 @@ const config: PlaywrightTestConfig = {
             height: 720
         }
     },
-
     projects: [
+
+        // -- Local Projects --
         {
             name: 'chromium',
             use: {
@@ -35,11 +36,37 @@ const config: PlaywrightTestConfig = {
             use: {
                 browserName: "webkit"
             }
-        }
+        },
+
+        // -- BrowserStack Projects --
+        // name should be of the format browser@browser_version:os os_version@browserstack
+        // {
+        //     name: 'chrome@latest:Windows 10@browserstack',
+        //     use: {
+        //         browserName: 'chromium',
+        //         channel: 'chrome'
+        //     },
+        // },
+        // {
+        //     name: 'playwright-firefox@latest:OSX Catalina@browserstack',
+        //     use: {
+        //         browserName: 'firefox',
+        //         ignoreHTTPSErrors: true
+        //     },
+        // },
+        // {
+        //     name: 'playwright-webkit@latest:OSX Big Sur@browserstack',
+        //     use: {
+        //         browserName: 'webkit',
+        //         // Config to use playwright emulated devices.
+        //         // ...devices['iPhone 12 Pro Max'],
+        //     }
+        // }
     ],
-    workers: 1,
+
+    // globalSetup: "./setup/global-setup.ts",
+    // globalTeardown: "./setup/global-teardown.ts",
     timeout: 120000,
-    // grep: [new RegExp("@smoke"), new RegExp("@reg")],
     retries: 0,
     reporter: [
         ["dot"],

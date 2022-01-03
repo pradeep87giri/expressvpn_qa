@@ -2,5 +2,7 @@
     "email": "pradeep_giri@nomail.com",
     "language": "de",
     "country": "DE",
-    "planInMonths": "6"
+    "planInMonths": "6",
+    "BROWSERSTACK_USERNAME": "pradeepgiri",
+    "BROWSERSTACK_ACCESS_KEY": ""
 }
