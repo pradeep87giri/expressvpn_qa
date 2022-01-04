@@ -13,7 +13,7 @@
         "outputDir": "/home/pradeep/Documents/expressvpn_qa/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "name": "playwright-firefox@latest:OSX Catalina@browserstack",
+        "name": "chromium",
         "testDir": "/home/pradeep/Documents/expressvpn_qa",
         "testIgnore": [],
         "testMatch": [
@@ -74,12 +74,12 @@
                   "timeout": 120000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectName": "playwright-firefox@latest:OSX Catalina@browserstack",
+                  "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "status": "passed",
-                      "duration": 19262,
+                      "duration": 25833,
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
@@ -95,26 +95,50 @@
             },
             {
               "title": "Change Language to de",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
                   "timeout": 120000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectName": "playwright-firefox@latest:OSX Catalina@browserstack",
+                  "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
-                      "status": "passed",
-                      "duration": 5445,
+                      "status": "failed",
+                      "duration": 7051,
+                      "error": {
+                        "message": "\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"https://www.expressvpn.com/de/orde\"\u001b[39m\nReceived: \u001b[31m\"https://www.expressvpn.com/de/orde\u001b[7mr\u001b[27m\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"https://www.expressvpn.com/de/orde\"\u001b[39m\nReceived: \u001b[31m\"https://www.expressvpn.com/de/orde\u001b[7mr\u001b[27m\"\u001b[39m\n    at /home/pradeep/Documents/expressvpn_qa/test/order.test.ts:28:28"
+                      },
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Order-Page-Validations-Change-Language-to-de-chromium/749414e39023edd7f02603c77d2b5dc8.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Order-Page-Validations-Change-Language-to-de-chromium/trace.zip"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/pradeep/Documents/expressvpn_qa/test-results/test-order-Order-Page-Validations-Change-Language-to-de-chromium/test-failed-1.png"
+                        }
+                      ],
+                      "errorLocation": {
+                        "column": 28,
+                        "line": 28
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "file": "test/order.test.ts",
@@ -130,12 +154,12 @@
                   "timeout": 120000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectName": "playwright-firefox@latest:OSX Catalina@browserstack",
+                  "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 1,
                       "status": "passed",
-                      "duration": 4718,
+                      "duration": 7884,
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
@@ -151,39 +175,31 @@
             },
             {
               "title": "Visual Comparison",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
                   "timeout": 120000,
                   "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectName": "playwright-firefox@latest:OSX Catalina@browserstack",
+                  "expectedStatus": "skipped",
+                  "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "status": "failed",
-                      "duration": 6744,
-                      "error": {
-                        "message": "/home/pradeep/Documents/expressvpn_qa/test/order.test.ts-snapshots/order-en-playwright-firefox-latest-OSX-Catalina-browserstack-linux.png is missing in snapshots, writing actual.",
-                        "stack": "Error: /home/pradeep/Documents/expressvpn_qa/test/order.test.ts-snapshots/order-en-playwright-firefox-latest-OSX-Catalina-browserstack-linux.png is missing in snapshots, writing actual.\n    at /home/pradeep/Documents/expressvpn_qa/test/order.test.ts:48:12"
-                      },
+                      "workerIndex": 1,
+                      "status": "skipped",
+                      "duration": 0,
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "attachments": [],
-                      "errorLocation": {
-                        "column": 12,
-                        "line": 48
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "skipped"
                 }
               ],
               "file": "test/order.test.ts",
               "line": 39,
-              "column": 5
+              "column": 10
             }
           ]
         }

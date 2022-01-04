@@ -45,7 +45,7 @@ Top Features:
 
 - [Playwright](https://playwright.dev)
 - [Typescript](https://www.typescriptlang.org/)
-- [adm-zip](https://www.npmjs.com/package/adm-zip)
+<!-- - [adm-zip](https://www.npmjs.com/package/adm-zip) -->
 
 
 ## Getting Started
@@ -83,53 +83,39 @@ npm i
 ## Usage
 
 1. For Browser Configuration, change required parameters in `playwright.config.ts`.
-2. For execution entire test suite on all available browsers simultaneously execute below command where "ENV" can be "qa" or "dev", `Test Cases are present in "tests" folder`:
+2. For execution entire test suite on all available browsers execute: ", `Test Cases are present in "tests" folder`:
 
 ```JS
-npx cross-env ENV=qa npm run test
+npm run test
 ```
 
-3. For executing single test case on Chrome browser execute the below command, you can change the browser for execution e.g. if you want to run test cases on Firefox, you can change `--project=Firefox` against `test:single` in `package.json`, just make sure the browser name given matches the name given in `playwright.config.ts`.
+3. For executing squentially on browsers, for example run test cases on Firefox firt and then on chrome:
 
 ```JS
-npx cross-env ENV=qa npm run test:single
+npm run test-serial
 ```
 
-4. For executing test cases in parallel, provide a suitable tag `@SmokeTest` at the start of your test case name, then in `package.json` against `test:parallel` give the tag value and execute :
-
+4. For debugging test cases add debug points:
 ```JS
-npx cross-env ENV=qa npm run test:parallel
+npm run debug
 ```
 
-5. For executing test cases in sequence, provide a suitable tag `@SmokeTest` at the start of your test case name, then in `package.json` against `test:serial` give the tag value and execute, `workers` parameter correspond to test cases you want to execute simultaneously e.g. `--workers=3`, executes 3 test cases simultaneously :
+5. For Allure Report generation run `report.bat` file or execute :
 
-```JS
-npx cross-env ENV=qa npm run test:serial
-```
-
-6. For Allure Report generation run `report.bat` file or execute :
-
-```JS
+```sh
 allure serve
 ```
-11. For HTML Report generation execute below command , single static HTML report(index.html) which can be sent via email is generated in "html-report" folder:
-12. For converting HTML Reports to zip file "adm-zip" library is used, the logic is implemented in `global-teardown.ts` , to make sure this runs after all the test are executed and after reports are generated, `global-teardown.ts` is given as a parameter for "globalTeardown" in `playwright.config.ts` file. Results are generated as `html-report.zip` in project directory. 
-13. For debugging test cases add debug points:
-```JS
-npm run test-debug
-```
-14. Screenshots, Videos and Trace files will be generated in test-results folder.
-15. To change your username go to `testConfig.ts` and provide value against `username`
-16. To change password, go to `lib/WebActions` in `decipherPassword()` uncomment `ENCRYPT` code block and replace `password` with your password, execute the test case, Encrypted password will be printed on your console . Copy Encrypted password in `testConfig.ts` against `password` field. You can comment Encrypt bloack ater this.
 
+<!-- 5. For HTML Report generation execute below command , single static HTML report(index.html) which can be sent via email is generated in "html-report" folder:
+6. For converting HTML Reports to zip file "adm-zip" library is used, the logic is implemented in `global-teardown.ts` , to make sure this runs after all the test are executed and after reports are generated, `global-teardown.ts` is given as a parameter for "globalTeardown" in `playwright.config.ts` file. Results are generated as `html-report.zip` in project directory.  -->
+7. Screenshots, Videos and Trace files will be generated in test-results folder on any failure
+
+8. To run on browserstack uncomment/add Browserstack projects in `playwright.config.ts` and provide your credentials in `credentials/browserstack.properties` file
 
 ## Reports
 
 - <b>Overall Report</b>
   ![Overall Report Screenshot][overall-report-screenshot]
-
-- <b>Detailed Report</b>
-  ![Detailed Report Screenshot][detailed-report-screenshot]
 
 - <b>Failure Report</b>
   ![Failure Report Screenshot][failure-report-screenshot]
@@ -137,7 +123,5 @@ npm run test-debug
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
-[overall-report-screenshot]: ReadMeImages/OverallReport.PNG
-[detailed-report-screenshot]: ReadMeImages/DetailedReport.PNG
-[failure-report-screenshot]: ReadMeImages/FailureReport.PNG
-[sonar-report-screenshot]: ReadMeImages/SonarReport.PNG
+[overall-report-screenshot]: readMeImages/Allure_Report.png
+[failure-report-screenshot]: readMeImages/Failed_Allure_Report.png
