@@ -1,6 +1,6 @@
 import { expect } from "@playwright/test";
 import { Page } from "playwright";
-import LocaleManager from "../managers/Locale.manager";
+import LocaleManager from "../managers/Property.manager";
 
 export default class OrderPage {
 
@@ -42,17 +42,17 @@ export default class OrderPage {
         await elePlan?.click()
     }
 
-    public async verifyTexts(locale: string) {
+    public async verifyTexts(language: string) {
         const eleHeader = this.page.locator(this.headerTitle)
         const elePlanTitle = this.page.locator(this.planTitle)
         const eleEmailTitle = this.page.locator(this.emailTitle)
         const elePaymentTitle = this.page.locator(this.paymentTitle)
 
-        //expected texts from locale files
-        const expectedHeaderTxt = this.localeManager.getLocaleProperty(locale, 'header')
-        const expectedPlanTxt = this.localeManager.getLocaleProperty(locale, 'planTitle')
-        const expectedEmailTxt = this.localeManager.getLocaleProperty(locale, 'emailTitle')
-        const expectedPaymentTxt = this.localeManager.getLocaleProperty(locale, 'paymentTitle')
+        //expected texts from language files
+        const expectedHeaderTxt = this.localeManager.getlanguageProperty(language, 'header')
+        const expectedPlanTxt = this.localeManager.getlanguageProperty(language, 'planTitle')
+        const expectedEmailTxt = this.localeManager.getlanguageProperty(language, 'emailTitle')
+        const expectedPaymentTxt = this.localeManager.getlanguageProperty(language, 'paymentTitle')
 
         //Verifying the actual texts with expected
         await expect(eleHeader).toHaveText(expectedHeaderTxt)
@@ -80,16 +80,16 @@ export default class OrderPage {
         }
     }
 
-    public async verifyEmailErrorMsg(locale: string) {
+    public async verifyEmailErrorMsg(language: string) {
         const eleEmailErrorMsg = this.page.locator(this.emailErrorMsg)
-        const expectedErrorTxt = this.localeManager.getLocaleProperty(locale, 'emailErrorMsg')
+        const expectedErrorTxt = this.localeManager.getlanguageProperty(language, 'emailErrorMsg')
         await expect(eleEmailErrorMsg).toHaveText(expectedErrorTxt)
     }
 
-    public async verifyAlertMsg(locale: string) {
+    public async verifyAlertMsg(language: string) {
         const eleAlertMsg = this.page.locator(this.alertMsg)
-        const expectedAlertMsg = this.localeManager.getLocaleProperty(locale, 'alertMsg')
-        await expect(eleAlertMsg).toHaveText(expectedAlertMsg)
+        const expectedAlertMsg = this.localeManager.getlanguageProperty(language, 'alertMsg')
+        await expect(eleAlertMsg).toContainText(expectedAlertMsg)
     }
 
 }

@@ -25,18 +25,18 @@ const config: PlaywrightTestConfig = {
                 browserName: "chromium"
             }
         },
-        {
-            name: 'firefox',
-            use: {
-                browserName: "firefox"
-            }
-        },
-        {
-            name: 'webkit',
-            use: {
-                browserName: "webkit"
-            }
-        },
+        // {
+        //     name: 'firefox',
+        //     use: {
+        //         browserName: "firefox"
+        //     }
+        // },
+        // {
+        //     name: 'webkit',
+        //     use: {
+        //         browserName: "webkit"
+        //     }
+        // },
 
         // -- BrowserStack Projects --
         // name should be of the format browser@browser_version:os os_version@browserstack

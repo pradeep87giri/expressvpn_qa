@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test",
+    "test:serial": "npx playwright test --workers=1",
     "debug": "npx playwright test --debug",
     "install-deps": "npx playwright install-deps"
   },

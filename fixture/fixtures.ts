@@ -3,6 +3,9 @@ import * as cp from 'child_process';
 import * as BrowserStackLocal from 'browserstack-local';
 import OrderPage from '../page/Order.page';
 import * as data from "../data/order.data.json";
+import PropertyManager from '../managers/Property.manager';
+
+var localeManager: PropertyManager = new PropertyManager()
 
 //Getting playwright version
 const clientPlaywrightVersion = cp
@@ -18,9 +21,9 @@ const caps = {
   os_version: 'catalina',
   name: 'My first playwright test',
   build: 'playwright-build-1',
-  'browserstack.username': data.BROWSERSTACK_USERNAME || 'YOUR_USERNAME',
+  'browserstack.username': localeManager.getBrowserstackUser() || 'YOUR_USERNAME',
   'browserstack.accessKey':
-    data.BROWSERSTACK_ACCESS_KEY || 'YOUR_ACCESS_KEY',
+    localeManager.getBrowserstackPwd() || 'YOUR_ACCESS_KEY',
   // 'browserstack.local': process.env.BROWSERSTACK_LOCAL || false,
   'client.playwrightVersion': clientPlaywrightVersion,
 };
@@ -88,5 +91,5 @@ export default test
 export const bsLocal = new BrowserStackLocal.Local();
 // replace YOUR_ACCESS_KEY with your key. You can also set an environment variable - "BROWSERSTACK_ACCESS_KEY".
 export const BS_LOCAL_ARGS = {
-  key: data.BROWSERSTACK_ACCESS_KEY || 'YOUR_ACCESS_KEY',
+  key: localeManager.getBrowserstackPwd() || 'YOUR_ACCESS_KEY',
 };

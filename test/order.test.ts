@@ -2,13 +2,6 @@ import { expect, WorkerInfo } from "@playwright/test";
 import * as data from "../data/order.data.json";
 import test from "../fixture/fixtures";
 
-let locale: string;
-
-
-test.beforeAll(() => {
-    locale = data.language.toLowerCase() + "-" + data.country.toUpperCase()
-})
-
 test.beforeEach(async ({ page }, workerInfo: WorkerInfo) => {
     if (workerInfo.project.name.match(/browserstack/)) {
         await page.goto("https://www.expressvpn.com/order")
@@ -23,21 +16,24 @@ test.describe("Order Page Validations", () => {
     test("Order Successfully", async ({ orderPage }) => {
         await orderPage.enterEmail(data.email)
         await orderPage.selectPlan(data.planInMonths)
-        await orderPage.verifyTexts("en-US")
+        //Check best deal alert msg if 12 months plan is not selected
+        if (data.planInMonths != "12")
+            await orderPage.verifyAlertMsg("en")
+        await orderPage.verifyTexts("en")
     })
 
-    test("Change Language", async ({ orderPage, page }) => {
-        await orderPage.changeLanguage(data.language);
-        //Validate the url is navigated to correct locale
+    test(`Change Language to ${data.language}`, async ({ orderPage, page }) => {
+        await orderPage.changeLanguage(data.language)
+        //Validate the url is navigated to correct language page
         expect(page.url()).toBe("https://www.expressvpn.com/" + data.language + "/order")
         //Verify texts of changed language
-        await orderPage.verifyTexts(locale)
+        await orderPage.verifyTexts(data.language)
     })
 
     test("Incorrect Email", async ({ orderPage }) => {
         await orderPage.enterEmail("Incorrect-Email")
         await orderPage.selectPlan(data.planInMonths)
-        await orderPage.verifyEmailErrorMsg("en-US")
+        await orderPage.verifyEmailErrorMsg("en")
     })
 
     test('Visual Comparison', async ({ page }) => {

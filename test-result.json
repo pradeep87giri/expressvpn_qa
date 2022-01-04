@@ -13,31 +13,7 @@
         "outputDir": "/home/pradeep/Documents/expressvpn_qa/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "name": "chromium",
-        "testDir": "/home/pradeep/Documents/expressvpn_qa",
-        "testIgnore": [],
-        "testMatch": [
-          "**/?(*.)@(spec|test).@(ts|js|mjs)"
-        ],
-        "timeout": 120000
-      },
-      {
-        "outputDir": "/home/pradeep/Documents/expressvpn_qa/test-results",
-        "repeatEach": 1,
-        "retries": 0,
-        "name": "firefox",
-        "testDir": "/home/pradeep/Documents/expressvpn_qa",
-        "testIgnore": [],
-        "testMatch": [
-          "**/?(*.)@(spec|test).@(ts|js|mjs)"
-        ],
-        "timeout": 120000
-      },
-      {
-        "outputDir": "/home/pradeep/Documents/expressvpn_qa/test-results",
-        "repeatEach": 1,
-        "retries": 0,
-        "name": "webkit",
+        "name": "playwright-firefox@latest:OSX Catalina@browserstack",
         "testDir": "/home/pradeep/Documents/expressvpn_qa",
         "testIgnore": [],
         "testMatch": [
@@ -73,7 +49,7 @@
     "version": "1.17.1",
     "workers": 2,
     "webServer": null,
-    "__testGroupsCount": 3
+    "__testGroupsCount": 1
   },
   "suites": [
     {
@@ -86,7 +62,7 @@
         {
           "title": "Order Page Validations",
           "file": "test/order.test.ts",
-          "line": 21,
+          "line": 14,
           "column": 6,
           "specs": [
             {
@@ -98,12 +74,12 @@
                   "timeout": 120000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectName": "chromium",
+                  "projectName": "playwright-firefox@latest:OSX Catalina@browserstack",
                   "results": [
                     {
                       "workerIndex": 0,
                       "status": "passed",
-                      "duration": 61910,
+                      "duration": 19262,
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
@@ -114,11 +90,11 @@
                 }
               ],
               "file": "test/order.test.ts",
-              "line": 23,
+              "line": 16,
               "column": 5
             },
             {
-              "title": "Change Language",
+              "title": "Change Language to de",
               "ok": true,
               "tags": [],
               "tests": [
@@ -126,12 +102,12 @@
                   "timeout": 120000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectName": "chromium",
+                  "projectName": "playwright-firefox@latest:OSX Catalina@browserstack",
                   "results": [
                     {
                       "workerIndex": 0,
                       "status": "passed",
-                      "duration": 14424,
+                      "duration": 5445,
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
@@ -142,7 +118,7 @@
                 }
               ],
               "file": "test/order.test.ts",
-              "line": 29,
+              "line": 25,
               "column": 5
             },
             {
@@ -154,12 +130,12 @@
                   "timeout": 120000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectName": "chromium",
+                  "projectName": "playwright-firefox@latest:OSX Catalina@browserstack",
                   "results": [
                     {
                       "workerIndex": 0,
                       "status": "passed",
-                      "duration": 11652,
+                      "duration": 4718,
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
@@ -170,275 +146,43 @@
                 }
               ],
               "file": "test/order.test.ts",
-              "line": 37,
+              "line": 33,
               "column": 5
             },
             {
               "title": "Visual Comparison",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
                   "timeout": 120000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectName": "chromium",
+                  "projectName": "playwright-firefox@latest:OSX Catalina@browserstack",
                   "results": [
                     {
                       "workerIndex": 0,
-                      "status": "passed",
-                      "duration": 5569,
+                      "status": "failed",
+                      "duration": 6744,
+                      "error": {
+                        "message": "/home/pradeep/Documents/expressvpn_qa/test/order.test.ts-snapshots/order-en-playwright-firefox-latest-OSX-Catalina-browserstack-linux.png is missing in snapshots, writing actual.",
+                        "stack": "Error: /home/pradeep/Documents/expressvpn_qa/test/order.test.ts-snapshots/order-en-playwright-firefox-latest-OSX-Catalina-browserstack-linux.png is missing in snapshots, writing actual.\n    at /home/pradeep/Documents/expressvpn_qa/test/order.test.ts:48:12"
+                      },
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "attachments": []
+                      "attachments": [],
+                      "errorLocation": {
+                        "column": 12,
+                        "line": 48
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "file": "test/order.test.ts",
-              "line": 43,
-              "column": 5
-            }
-          ]
-        },
-        {
-          "title": "Order Page Validations",
-          "file": "test/order.test.ts",
-          "line": 21,
-          "column": 6,
-          "specs": [
-            {
-              "title": "Order Successfully",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "status": "passed",
-                      "duration": 45906,
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "file": "test/order.test.ts",
-              "line": 23,
-              "column": 5
-            },
-            {
-              "title": "Change Language",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "status": "passed",
-                      "duration": 20225,
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "file": "test/order.test.ts",
-              "line": 29,
-              "column": 5
-            },
-            {
-              "title": "Incorrect Email",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "status": "passed",
-                      "duration": 11040,
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "file": "test/order.test.ts",
-              "line": 37,
-              "column": 5
-            },
-            {
-              "title": "Visual Comparison",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "status": "passed",
-                      "duration": 12464,
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "file": "test/order.test.ts",
-              "line": 43,
-              "column": 5
-            }
-          ]
-        },
-        {
-          "title": "Order Page Validations",
-          "file": "test/order.test.ts",
-          "line": 21,
-          "column": 6,
-          "specs": [
-            {
-              "title": "Order Successfully",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "status": "passed",
-                      "duration": 18129,
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "file": "test/order.test.ts",
-              "line": 23,
-              "column": 5
-            },
-            {
-              "title": "Change Language",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "status": "passed",
-                      "duration": 13882,
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "file": "test/order.test.ts",
-              "line": 29,
-              "column": 5
-            },
-            {
-              "title": "Incorrect Email",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "status": "passed",
-                      "duration": 7648,
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "file": "test/order.test.ts",
-              "line": 37,
-              "column": 5
-            },
-            {
-              "title": "Visual Comparison",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "status": "passed",
-                      "duration": 7892,
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "file": "test/order.test.ts",
-              "line": 43,
+              "line": 39,
               "column": 5
             }
           ]
