@@ -16,7 +16,8 @@
     "ts-node": "10.4.0",
     "experimental-allure-playwright": "0.0.3",
     "properties-reader": "2.2.0",
-    "browserstack-local": "^1.4.8"
+    "browserstack-local": "^1.4.8",
+    "adm-zip": "0.5.9"
   },
   "keywords": [
     "qa",

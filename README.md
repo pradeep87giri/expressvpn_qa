@@ -105,9 +105,7 @@ npm run debug
 ```sh
 allure serve
 ```
-
-<!-- 5. For HTML Report generation execute below command , single static HTML report(index.html) which can be sent via email is generated in "html-report" folder:
-6. For converting HTML Reports to zip file "adm-zip" library is used, the logic is implemented in `global-teardown.ts` , to make sure this runs after all the test are executed and after reports are generated, `global-teardown.ts` is given as a parameter for "globalTeardown" in `playwright.config.ts` file. Results are generated as `html-report.zip` in project directory.  -->
+ 
 7. Screenshots, Videos and Trace files will be generated in test-results folder on any failure
 
 8. To run on browserstack uncomment/add Browserstack projects in `playwright.config.ts` and provide your credentials in `credentials/browserstack.properties` file
@@ -120,6 +118,11 @@ allure serve
 - <b>Failure Report</b>
   ![Failure Report Screenshot][failure-report-screenshot]
 
+
+A static HTML Report is also generated(index.html) in "playwright-report" folder. For converting HTML Reports to zip file "adm-zip" library is used, the logic is implemented in `global-teardown.ts` , to make sure this runs after all the test are executed and after reports are generated, `global-teardown.ts` is given as a parameter for "globalTeardown" in `playwright.config.ts` file. Results are generated as `report.zip` in project directory.
+
+
+**Please note that on executing first time, Visual comparison test case will fail as it will capture the snapshot as a base reference. On next executions it will compare current execution's screenshot with base screenshot.**
 
 <!-- MARKDOWN LINKS & IMAGES -->
 

@@ -25,18 +25,18 @@ const config: PlaywrightTestConfig = {
                 browserName: "chromium"
             }
         },
-        // {
-        //     name: 'firefox',
-        //     use: {
-        //         browserName: "firefox"
-        //     }
-        // },
-        // {
-        //     name: 'webkit',
-        //     use: {
-        //         browserName: "webkit"
-        //     }
-        // },
+        {
+            name: 'firefox',
+            use: {
+                browserName: "firefox"
+            }
+        },
+        {
+            name: 'webkit',
+            use: {
+                browserName: "webkit"
+            }
+        },
 
         // -- BrowserStack Projects --
         // name should be of the format browser@browser_version:os os_version@browserstack
@@ -64,13 +64,15 @@ const config: PlaywrightTestConfig = {
         // }
     ],
 
-    // globalSetup: "./setup/global-setup.ts",
-    // globalTeardown: "./setup/global-teardown.ts",
+    globalTeardown: './helper/globalsetup.ts',
     timeout: 120000,
     retries: 0,
     reporter: [
         ["dot"],
         ["json", { outputFile: "test-result.json" }],
+        ['html', {
+            open: "never"
+        }],
         ['experimental-allure-playwright']
     ]
 }
