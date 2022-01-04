@@ -45,7 +45,7 @@ Top Features:
 
 - [Playwright](https://playwright.dev)
 - [Typescript](https://www.typescriptlang.org/)
-<!-- - [adm-zip](https://www.npmjs.com/package/adm-zip) -->
+- [adm-zip](https://www.npmjs.com/package/adm-zip)
 
 
 ## Getting Started
@@ -122,7 +122,8 @@ allure serve
 A static HTML Report is also generated(index.html) in "playwright-report" folder. For converting HTML Reports to zip file "adm-zip" library is used, the logic is implemented in `global-teardown.ts` , to make sure this runs after all the test are executed and after reports are generated, `global-teardown.ts` is given as a parameter for "globalTeardown" in `playwright.config.ts` file. Results are generated as `report.zip` in project directory.
 
 
-**Please note that on executing first time, Visual comparison test case will fail as it will capture the snapshot as a base reference. On next executions it will compare current execution's screenshot with base screenshot.**
+## Note
+*On first time execution Visual comparison test case will fail as it will capture the snapshot as a base reference. On next executions it will compare current execution's screenshot with base screenshot.*
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
